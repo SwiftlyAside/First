@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="ko">
 <head>
   <title>회원가입</title>
   <meta name="title" content="회원가입 페이지"/>
@@ -8,20 +8,20 @@
   <meta name="author" content="김찬수"/>
   <meta charset="UTF-8"/>
   <script type="text/javascript">
-    const first = "First";
-    let sample = "sample";
-    document.write("<h1>" + first + " " + sample + "</h1>");
-    function BodyWrite(words) {
-      alert(words);
-    }
-
     function isExist() {
       let ids = ['jin', 'din', 'infiscap'];
       let result = ids.find(isID);
-      if (typeof result !== 'undefined') {
-        alert('ID가 중복되었습니다.');
-        document.getElementById('inputID').value = "";
-      }
+      if (typeof result !== 'undefined')
+        MsgAndFocus('ID가 중복되었습니다.', 'inputID');
+      else
+        MsgAndFocus('사용 가능한 ID 입니다.', 'inputPW');
+    }
+
+    function MsgAndFocus(msg, objID) {
+      alert(msg);
+      let obj = document.getElementById(objID);
+      if (objID === 'inputID') obj.value = "";
+      obj.focus();
     }
 
     function isID(value, index, array) {
@@ -71,6 +71,5 @@
   </table>
 </center>
 <hr/>
-<input type="button" onclick="BodyWrite('Hello JS');" value="OK"/>
 </body>
 </html>
