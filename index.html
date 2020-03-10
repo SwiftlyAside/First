@@ -15,14 +15,17 @@
       alert(words);
     }
 
-    function getData() {
+    function isExist() {
       let ids = ['jin', 'din', 'infiscap'];
       let result = ids.find(isID);
-      alert(result);
+      if (typeof result !== 'undefined') {
+        alert('ID가 중복되었습니다.');
+        document.getElementById('inputID').value = "";
+      }
     }
 
     function isID(value, index, array) {
-      let id = document.getElementById("inputID").value;
+      let id = document.getElementById('inputID').value;
       return id === value;
     }
   </script>
@@ -39,7 +42,7 @@
     </tr>
     <tr><td>
       <input type="text" size="47" placeholder="아이디" autofocus id="inputID"/>
-      <input type="button" value="중복확인" onclick="getData();"/>
+      <input type="button" value="중복확인" onclick="isExist();"/>
     </td></tr>
     <tr><td>
       <input type="password" size="60" placeholder="비밀번호" autofocus id="inputPW"/>
