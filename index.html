@@ -28,6 +28,20 @@
       let id = document.getElementById('inputID').value;
       return id === value;
     }
+
+    function ComparePW() {
+      let pw = document.getElementById('inputPW');
+      let pwOK = document.getElementById('inputPWOK');
+      if (pw.value !== pwOK.value) {
+        MsgAndFocus('패스워드가 서로 다릅니다.', 'inputPW');
+        pwOK.value = "";
+      }
+    }
+
+    function setEmail() {
+      let selectEmail = document.getElementById('selectEmail');
+      alert(selectEmail.value);
+    }
   </script>
 </head>
 <body>
@@ -53,12 +67,12 @@
     <tr><td>
       <input type="text" size="41" placeholder="이메일" autofocus id="inputEmail"/>
       <label>@</label>
-      <select>
-        <option>선택</option>
-        <option>naver.com</option>
-        <option>daum.net</option>
-        <option>gmail.com</option>
-        <option>직접 입력</option>
+      <select id="selectEmail" onchange="setEmail();">
+        <option value="select">선택</option>
+        <option value="naver">naver.com</option>
+        <option value="daum">daum.net</option>
+        <option value="gmail">gmail.com</option>
+        <option value="directInput">직접 입력</option>
       </select>
     </td></tr>
     <tr><td>
@@ -66,7 +80,7 @@
     </td></tr>
     <tr><td align="center">
       <hr/>
-      <input type="button" value="회원가입"/>
+      <input type="button" value="회원가입" onclick="ComparePW();"/>
     </td></tr>
   </table>
 </center>
