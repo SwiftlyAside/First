@@ -252,14 +252,21 @@ textarea {
     page-break-inside: avoid;
   }
   p,
+  h1,
   h2,
   h3 {
     orphans: 3;
     widows: 3;
   }
+
+  h1,
   h2,
   h3 {
+    color: darkblue;
     page-break-after: avoid;
+  }
+  body {
+    background-color: #ecfcff;
   }
 }
 

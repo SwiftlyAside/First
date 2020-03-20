@@ -7,42 +7,7 @@
   <meta name="keywords" content="회원가입, membership"/>
   <meta name="author" content="김찬수"/>
   <meta charset="UTF-8"/>
-  <script type="text/javascript">
-    function isExist() {
-      let ids = ['jin', 'din', 'infiscap'];
-      let result = ids.find(isID);
-      if (typeof result !== 'undefined')
-        MsgAndFocus('ID가 중복되었습니다.', 'inputID');
-      else
-        MsgAndFocus('사용 가능한 ID 입니다.', 'inputPW');
-    }
-
-    function MsgAndFocus(msg, objID) {
-      alert(msg);
-      let obj = document.getElementById(objID);
-      if (objID === 'inputID') obj.value = "";
-      obj.focus();
-    }
-
-    function isID(value, index, array) {
-      let id = document.getElementById('inputID').value;
-      return id === value;
-    }
-
-    function ComparePW() {
-      let pw = document.getElementById('inputPW');
-      let pwOK = document.getElementById('inputPWOK');
-      if (pw.value !== pwOK.value) {
-        MsgAndFocus('패스워드가 서로 다릅니다.', 'inputPW');
-        pwOK.value = "";
-      }
-    }
-
-    function setEmail() {
-      let selectEmail = document.getElementById('selectEmail');
-      alert(selectEmail.value);
-    }
-  </script>
+  <link rel="stylesheet" href="css/main.css"/>
 </head>
 <body>
 <hr/>
@@ -50,7 +15,7 @@
   <table width="400">
     <tr>
       <td align='center'>
-        <h2>회원 정보 입력</h2>
+        <h2 id="titleword">회원 정보 입력</h2>
         <hr/>
       </td>
     </tr>
@@ -85,5 +50,6 @@
   </table>
 </center>
 <hr/>
+<script src="js/main.js"></script>
 </body>
 </html>
